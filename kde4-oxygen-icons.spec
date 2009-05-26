@@ -79,6 +79,11 @@ rm -rf $RPM_BUILD_ROOT
 %files -n kde4-icons-oxygen
 %defattr(644,root,root,755)
 # digikam has it's own icon in digikam.spec
+%dir %{_iconsdir}/oxygen/256x256
+%dir %{_iconsdir}/oxygen/256x256/apps
+%dir %{_iconsdir}/oxygen/256x256/mimetypes
+%dir %{_iconsdir}/oxygen/256x256/places
+%dir %{_iconsdir}/oxygen/256x256/status
 %exclude %{_iconsdir}/oxygen/*x*/apps/digikam.*
 %exclude %{_iconsdir}/oxygen/*x*/apps/showfoto.*
 %{_iconsdir}/oxygen/*x*/actions/*
