@@ -81,6 +81,8 @@ rm -rf $RPM_BUILD_ROOT
 %exclude %{_iconsdir}/oxygen/*x*/apps/showfoto.*
 %dir %{_iconsdir}/oxygen/256x256
 %dir %{_iconsdir}/oxygen/256x256/apps
+%dir %{_iconsdir}/oxygen/256x256/categories
+%dir %{_iconsdir}/oxygen/256x256/devices
 %dir %{_iconsdir}/oxygen/256x256/mimetypes
 %dir %{_iconsdir}/oxygen/256x256/places
 %dir %{_iconsdir}/oxygen/256x256/status
