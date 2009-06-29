@@ -79,6 +79,11 @@ rm -rf $RPM_BUILD_ROOT
 # digikam has it's own icon in digikam.spec
 %exclude %{_iconsdir}/oxygen/*x*/apps/digikam.*
 %exclude %{_iconsdir}/oxygen/*x*/apps/showfoto.*
+%dir %{_iconsdir}/oxygen/256x256
+%dir %{_iconsdir}/oxygen/256x256/apps
+%dir %{_iconsdir}/oxygen/256x256/mimetypes
+%dir %{_iconsdir}/oxygen/256x256/places
+%dir %{_iconsdir}/oxygen/256x256/status
 %{_iconsdir}/oxygen/*x*/actions/*
 %{_iconsdir}/oxygen/*x*/apps/*
 %{_iconsdir}/oxygen/*x*/categories/*
