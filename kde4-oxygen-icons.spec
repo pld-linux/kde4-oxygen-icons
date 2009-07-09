@@ -8,13 +8,13 @@
 Summary:	KDE4 - Oxygen icons
 Summary(pl.UTF-8):	Ikony Oxygen dla KDE4
 Name:		kde4-oxygen-icons
-Version:	4.2.91
+Version:	4.2.96
 Release:	1
 License:	GPL v2
 Group:		X11/Libraries
-Source0:	ftp://ftp.kde.org/pub/kde/%{state}/%{version}/src/%{orgname}-%{version}svn%{svn}.tar.bz2
-# Source0-md5:	fcb5d4026c455cc94c1c818e480dc30f
-#Source0:	ftp://ftp.kde.org/pub/kde/%{state}/%{version}/src/%{orgname}-%{version}.tar.bz2
+#Source0:	ftp://ftp.kde.org/pub/kde/%{state}/%{version}/src/%{orgname}-%{version}svn%{svn}.tar.bz2
+Source0:	ftp://ftp.kde.org/pub/kde/%{state}/%{version}/src/%{orgname}-%{version}.tar.bz2
+# Source0-md5:	95fd0245065f27c8a1f47337310fe9cf
 URL:		http://www.kde.org/
 BuildRequires:	cmake >= 2.6.1-2
 BuildRequires:	rpmbuild(macros) >= 1.293
@@ -53,7 +53,9 @@ KDE icons - oxygen. This package contains SVG icons.
 Motyw ikon do KDE - oxygen. Ten pakiet zawiera ikony SVG.
 
 %prep
-%setup -q -n %{orgname}-%{version}svn%{svn}
+
+%setup -q -n %{orgname}-%{version}
+#%setup -q -n %{orgname}-%{version}svn%{svn}
 
 %build
 install -d build
@@ -81,6 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 # digikam has it's own icon in digikam.spec
 %dir %{_iconsdir}/oxygen/256x256
 %dir %{_iconsdir}/oxygen/256x256/apps
+%dir %{_iconsdir}/oxygen/256x256/categories
 %dir %{_iconsdir}/oxygen/256x256/devices
 %dir %{_iconsdir}/oxygen/256x256/mimetypes
 %dir %{_iconsdir}/oxygen/256x256/places
