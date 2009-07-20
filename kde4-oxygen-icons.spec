@@ -1,18 +1,20 @@
 #
 # Conditional build:
 #
-%define		state		stable
+%define		state		unstable
 %define		orgname		oxygen-icons
+%define		svn		979380
 
 Summary:	KDE4 - Oxygen icons
 Summary(pl.UTF-8):	Ikony Oxygen dla KDE4
 Name:		kde4-oxygen-icons
-Version:	4.2.95
+Version:	4.2.96
 Release:	1
 License:	GPL v2
 Group:		X11/Libraries
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	c9641494d128fd04eb09c273b57fc22a
+#Source0:	ftp://ftp.kde.org/pub/kde/%{state}/%{version}/src/%{orgname}-%{version}svn%{svn}.tar.bz2
+Source0:	ftp://ftp.kde.org/pub/kde/%{state}/%{version}/src/%{orgname}-%{version}.tar.bz2
+# Source0-md5:	95fd0245065f27c8a1f47337310fe9cf
 URL:		http://www.kde.org/
 BuildRequires:	cmake >= 2.6.1-2
 BuildRequires:	rpmbuild(macros) >= 1.293
@@ -26,11 +28,11 @@ KDE4 - Oxygen Icons.
 Ikony Oxygen dla KDE4.
 
 %package -n kde4-icons-oxygen
-Summary:        KDE icons - oxygen
-Summary(pl.UTF-8):      Motyw ikon do KDE - oxygen
-Group:          Themes
-Obsoletes:      kde-icons-oxygen
-Provides:       kde4-icons
+Summary:	KDE icons - oxygen
+Summary(pl.UTF-8):	Motyw ikon do KDE - oxygen
+Group:		Themes
+Provides:	kde4-icons
+Obsoletes:	kde-icons-oxygen
 
 %description -n kde4-icons-oxygen
 KDE icons - oxygen.
@@ -39,10 +41,10 @@ KDE icons - oxygen.
 Motyw ikon do KDE - oxygen.
 
 %package -n kde4-icons-oxygen-svg
-Summary:        KDE SVG icons - oxygen
-Summary(pl.UTF-8):      Motyw ikon SVG do KDE - oxygen
-Group:          Themes
-Provides:       kde4-icons
+Summary:	KDE SVG icons - oxygen
+Summary(pl.UTF-8):	Motyw ikon SVG do KDE - oxygen
+Group:		Themes
+Provides:	kde4-icons
 
 %description -n kde4-icons-oxygen-svg
 KDE icons - oxygen. This package contains SVG icons.
@@ -51,7 +53,9 @@ KDE icons - oxygen. This package contains SVG icons.
 Motyw ikon do KDE - oxygen. Ten pakiet zawiera ikony SVG.
 
 %prep
+
 %setup -q -n %{orgname}-%{version}
+#%setup -q -n %{orgname}-%{version}svn%{svn}
 
 %build
 install -d build
@@ -70,6 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 cp -r scalable $RPM_BUILD_ROOT%{_iconsdir}/oxygen/
+install -d $RPM_BUILD_ROOT%{_iconsdir}/oxygen/42x42/{apps,devices,mimetypes,places}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -77,8 +82,6 @@ rm -rf $RPM_BUILD_ROOT
 %files -n kde4-icons-oxygen
 %defattr(644,root,root,755)
 # digikam has it's own icon in digikam.spec
-%exclude %{_iconsdir}/oxygen/*x*/apps/digikam.*
-%exclude %{_iconsdir}/oxygen/*x*/apps/showfoto.*
 %dir %{_iconsdir}/oxygen/256x256
 %dir %{_iconsdir}/oxygen/256x256/apps
 %dir %{_iconsdir}/oxygen/256x256/categories
@@ -86,6 +89,13 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_iconsdir}/oxygen/256x256/mimetypes
 %dir %{_iconsdir}/oxygen/256x256/places
 %dir %{_iconsdir}/oxygen/256x256/status
+%dir %{_iconsdir}/oxygen/42x42
+%dir %{_iconsdir}/oxygen/42x42/apps
+%dir %{_iconsdir}/oxygen/42x42/devices
+%dir %{_iconsdir}/oxygen/42x42/mimetypes
+%dir %{_iconsdir}/oxygen/42x42/places
+%exclude %{_iconsdir}/oxygen/*x*/apps/digikam.*
+%exclude %{_iconsdir}/oxygen/*x*/apps/showfoto.*
 %{_iconsdir}/oxygen/*x*/actions/*
 %{_iconsdir}/oxygen/*x*/apps/*
 %{_iconsdir}/oxygen/*x*/categories/*
