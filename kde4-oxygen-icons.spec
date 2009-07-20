@@ -74,6 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 cp -r scalable $RPM_BUILD_ROOT%{_iconsdir}/oxygen/
+install -d $RPM_BUILD_ROOT%{_iconsdir}/oxygen/42x42/{apps,devices,mimetypes,places}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -88,6 +89,11 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_iconsdir}/oxygen/256x256/mimetypes
 %dir %{_iconsdir}/oxygen/256x256/places
 %dir %{_iconsdir}/oxygen/256x256/status
+%dir %{_iconsdir}/oxygen/42x42
+%dir %{_iconsdir}/oxygen/42x42/apps
+%dir %{_iconsdir}/oxygen/42x42/devices
+%dir %{_iconsdir}/oxygen/42x42/mimetypes
+%dir %{_iconsdir}/oxygen/42x42/places
 %exclude %{_iconsdir}/oxygen/*x*/apps/digikam.*
 %exclude %{_iconsdir}/oxygen/*x*/apps/showfoto.*
 %{_iconsdir}/oxygen/*x*/actions/*
