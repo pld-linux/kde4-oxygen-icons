@@ -2,17 +2,19 @@
 # Conditional build:
 #
 %define		state		unstable
+%define		snap		svn1013471	
 %define		orgname		oxygen-icons
 
 Summary:	KDE4 - Oxygen icons
 Summary(pl.UTF-8):	Ikony Oxygen dla KDE4
 Name:		kde4-oxygen-icons
-Version:	4.3.0
+Version:	4.3.65
 Release:	1
 License:	GPL v2
 Group:		X11/Libraries
-Source0:	ftp://ftp.kde.org/pub/kde/%{state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	26b63e75f9f198f91a022e5f198119bb
+#Source0:	ftp://ftp.kde.org/pub/kde/%{state}/%{version}/src/%{orgname}-%{version}.tar.bz2
+Source0:	ftp://ftp.kde.org/pub/kde/%{state}/%{version}/src/%{orgname}-%{version}%{snap}.tar.bz2
+# Source0-md5:	86840e212dcc12a828deff9ee7ed5011
 URL:		http://www.kde.org/
 BuildRequires:	cmake >= 2.6.1-2
 BuildRequires:	rpmbuild(macros) >= 1.293
@@ -52,7 +54,7 @@ Motyw ikon do KDE - oxygen. Ten pakiet zawiera ikony SVG.
 
 %prep
 
-%setup -q -n %{orgname}-%{version}
+%setup -q -n %{orgname}-%{version}%{snap}
 
 %build
 install -d build
