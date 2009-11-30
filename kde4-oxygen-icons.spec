@@ -15,6 +15,7 @@ Source0:	ftp://ftp.kde.org/pub/kde/%{state}/%{version}/src/%{orgname}-%{version}
 # Source0-md5:	8029e49f68f38f808e4aff16e491c3cb
 URL:		http://www.kde.org/
 BuildRequires:	cmake >= 2.6.1-2
+BuildRequires:	libstdc++-devel
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
