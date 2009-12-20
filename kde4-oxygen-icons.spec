@@ -8,12 +8,12 @@
 Summary:	KDE4 - Oxygen icons
 Summary(pl.UTF-8):	Ikony Oxygen dla KDE4
 Name:		kde4-oxygen-icons
-Version:	4.3.80
+Version:	4.3.85
 Release:	1
 License:	GPL v2
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	97a391478720b670a97ad7d18054f1b6
+# Source0-md5:	842503731c13bb3af227a40d4a8e2c29
 URL:		http://www.kde.org/
 BuildRequires:	cmake >= 2.6.1-2
 BuildRequires:	rpmbuild(macros) >= 1.293
