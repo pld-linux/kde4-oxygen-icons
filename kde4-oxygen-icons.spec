@@ -15,7 +15,7 @@ Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 # Source0-md5:	28c3952fab20cc15ba0a8b2e00080649
 URL:		http://www.kde.org/
-BuildRequires:	cmake >= 2.6.1-2
+BuildRequires:	cmake >= 2.8.0
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
