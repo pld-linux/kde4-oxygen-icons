@@ -1,7 +1,7 @@
 #
 # Conditional build:
 #
-%define		state		unstable
+%define		_state		unstable
 %define		snap		svn1048496
 %define		orgname		oxygen-icons
 
@@ -12,7 +12,7 @@ Version:	4.3.98
 Release:	1
 License:	GPL v2
 Group:		X11/Libraries
-Source0:	ftp://ftp.kde.org/pub/kde/%{state}/%{version}/src/%{orgname}-%{version}.tar.bz2
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 # Source0-md5:	28c3952fab20cc15ba0a8b2e00080649
 URL:		http://www.kde.org/
 BuildRequires:	cmake >= 2.8.0
