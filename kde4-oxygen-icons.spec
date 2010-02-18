@@ -61,6 +61,7 @@ cd build
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
 	-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
 	-DCMAKE_CXX_COMPILER_WORKS=1 \
+	-DCMAKE_CXX_COMPILER="%{__cc}" \
 	-DCMAKE_C_COMPILER_WORKS=1 \
 %if "%{_lib}" == "lib64"
 	-DLIB_SUFFIX=64
