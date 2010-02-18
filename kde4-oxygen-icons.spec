@@ -1,20 +1,21 @@
 #
 # Conditional build:
 #
-%define		state		stable
+%define		_state		stable
+%define		snap		svn1048496
 %define		orgname		oxygen-icons
 
 Summary:	KDE4 - Oxygen icons
 Summary(pl.UTF-8):	Ikony Oxygen dla KDE4
 Name:		kde4-oxygen-icons
-Version:	4.3.5
+Version:	4.4.0
 Release:	1
 License:	GPL v2
 Group:		X11/Libraries
-Source0:	ftp://ftp.kde.org/pub/kde/%{state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	d41f62ab450e06c1f375179289417e98
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
+# Source0-md5:	fbcd429cc822cb88a815d97a4e66be4d
 URL:		http://www.kde.org/
-BuildRequires:	cmake >= 2.6.1-2
+BuildRequires:	cmake >= 2.8.0
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -51,7 +52,6 @@ KDE icons - oxygen. This package contains SVG icons.
 Motyw ikon do KDE - oxygen. Ten pakiet zawiera ikony SVG.
 
 %prep
-
 %setup -q -n %{orgname}-%{version}
 
 %build
@@ -61,7 +61,7 @@ cd build
 	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
 	-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
 	-DCMAKE_CXX_COMPILER_WORKS=1 \
-	-DCMAKE_CXX_COMPILER="%{__cc}" \
+	-DCMAKE_C_COMPILER_WORKS=1 \
 %if "%{_lib}" == "lib64"
 	-DLIB_SUFFIX=64
 %endif
@@ -82,6 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 # digikam has it's own icon in digikam.spec
 %dir %{_iconsdir}/oxygen/256x256
+%dir %{_iconsdir}/oxygen/256x256/actions
 %dir %{_iconsdir}/oxygen/256x256/apps
 %dir %{_iconsdir}/oxygen/256x256/categories
 %dir %{_iconsdir}/oxygen/256x256/devices
