@@ -9,11 +9,12 @@ Summary:	KDE4 - Oxygen icons
 Summary(pl.UTF-8):	Ikony Oxygen dla KDE4
 Name:		kde4-oxygen-icons
 Version:	4.4.3
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 # Source0-md5:	dc99464e79f92feede0d0bd92ef1d1db
+Source1:	%{name}-pld_czarny.png
 URL:		http://www.kde.org/
 BuildRequires:	cmake >= 2.8.0
 BuildRequires:	rpmbuild(macros) >= 1.293
@@ -75,6 +76,8 @@ rm -rf $RPM_BUILD_ROOT
 
 cp -r scalable $RPM_BUILD_ROOT%{_iconsdir}/oxygen/
 install -d $RPM_BUILD_ROOT%{_iconsdir}/oxygen/42x42/{apps,devices,mimetypes,places}
+
+install %{SOURCE1} $RPM_BUILD_ROOT/%{_iconsdir}/oxygen/48x48/apps/pld_czarny.png
 
 %clean
 rm -rf $RPM_BUILD_ROOT
