@@ -74,17 +74,16 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-cp -r scalable $RPM_BUILD_ROOT%{_iconsdir}/oxygen/
+cp -r scalable $RPM_BUILD_ROOT%{_iconsdir}/oxygen
 install -d $RPM_BUILD_ROOT%{_iconsdir}/oxygen/42x42/{apps,devices,mimetypes,places}
 
-install %{SOURCE1} $RPM_BUILD_ROOT/%{_iconsdir}/oxygen/48x48/apps/pld_czarny.png
+cp -a %{SOURCE1} $RPM_BUILD_ROOT%{_iconsdir}/oxygen/48x48/apps/pld_czarny.png
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files -n kde4-icons-oxygen
 %defattr(644,root,root,755)
-# digikam has it's own icon in digikam.spec
 %dir %{_iconsdir}/oxygen/256x256
 %dir %{_iconsdir}/oxygen/256x256/actions
 %dir %{_iconsdir}/oxygen/256x256/apps
@@ -98,6 +97,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_iconsdir}/oxygen/42x42/devices
 %dir %{_iconsdir}/oxygen/42x42/mimetypes
 %dir %{_iconsdir}/oxygen/42x42/places
+# digikam has it's own icon in digikam.spec
 %exclude %{_iconsdir}/oxygen/*x*/apps/digikam.*
 %exclude %{_iconsdir}/oxygen/*x*/apps/showfoto.*
 %{_iconsdir}/oxygen/*x*/actions/*
