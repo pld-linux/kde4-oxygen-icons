@@ -15,6 +15,8 @@ Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
 # Source0-md5:	36c31cdeaf4543174de2bece17f98154
 Source1:	%{name}-pld_czarny.png
+Source2:	kpld.tar.gz
+# Source2-md5:	1111e8a60b33ad694e91d574233dde0e
 URL:		http://www.kde.org/
 BuildRequires:	cmake >= 2.8.0
 BuildRequires:	rpmbuild(macros) >= 1.293
@@ -53,7 +55,7 @@ KDE icons - oxygen. This package contains SVG icons.
 Motyw ikon do KDE - oxygen. Ten pakiet zawiera ikony SVG.
 
 %prep
-%setup -q -n %{orgname}-%{version}
+%setup -q -n %{orgname}-%{version} -a2
 
 %build
 install -d build
@@ -78,6 +80,16 @@ cp -r scalable $RPM_BUILD_ROOT%{_iconsdir}/oxygen
 install -d $RPM_BUILD_ROOT%{_iconsdir}/oxygen/42x42/{apps,devices,mimetypes,places}
 
 cp -a %{SOURCE1} $RPM_BUILD_ROOT%{_iconsdir}/oxygen/48x48/apps/pld_czarny.png
+
+# install PLD KMenu icon
+install kpld/kde16x16.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/16x16/apps/kde.png
+install kpld/kde22x22.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/22x22/apps/kde.png
+install kpld/kde32x32.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/32x32/apps/kde.png
+install kpld/kde48x48.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/48x48/apps/kde.png
+install kpld/kde64x64.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/64x64/apps/kde.png
+install kpld/kde128x128.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/128x128/apps/kde.png
+install kpld/kde256x256.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/256x256/apps/kde.png
+install kpld/kde.svg $RPM_BUILD_ROOT%{_iconsdir}/oxygen/scalable/apps/kde-pld.svg
 
 %clean
 rm -rf $RPM_BUILD_ROOT
