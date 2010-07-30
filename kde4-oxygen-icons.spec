@@ -2,7 +2,6 @@
 # Conditional build:
 #
 %define		_state		stable
-%define		snap		svn1048496
 %define		orgname		oxygen-icons
 
 Summary:	KDE4 - Oxygen icons
