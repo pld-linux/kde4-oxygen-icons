@@ -8,7 +8,7 @@ Summary:	KDE4 - Oxygen icons
 Summary(pl.UTF-8):	Ikony Oxygen dla KDE4
 Name:		kde4-oxygen-icons
 Version:	4.5.1
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
@@ -81,14 +81,21 @@ install -d $RPM_BUILD_ROOT%{_iconsdir}/oxygen/42x42/{apps,devices,mimetypes,plac
 cp -a %{SOURCE1} $RPM_BUILD_ROOT%{_iconsdir}/oxygen/48x48/apps/pld_czarny.png
 
 # install PLD KMenu icon
-install kpld/kde16x16.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/16x16/apps/kde.png
-install kpld/kde22x22.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/22x22/apps/kde.png
-install kpld/kde32x32.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/32x32/apps/kde.png
-install kpld/kde48x48.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/48x48/apps/kde.png
-install kpld/kde64x64.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/64x64/apps/kde.png
-install kpld/kde128x128.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/128x128/apps/kde.png
-install kpld/kde256x256.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/256x256/apps/kde.png
+install kpld/kde16x16.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/16x16/apps/kde-pld.png
+install kpld/kde22x22.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/22x22/apps/kde-pld.png
+install kpld/kde32x32.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/32x32/apps/kde-pld.png
+install kpld/kde48x48.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/48x48/apps/kde-pld.png
+install kpld/kde64x64.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/64x64/apps/kde-pld.png
+install kpld/kde128x128.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/128x128/apps/kde-pld.png
+install kpld/kde256x256.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/256x256/apps/kde-pld.png
 install kpld/kde.svg $RPM_BUILD_ROOT%{_iconsdir}/oxygen/scalable/apps/kde-pld.svg
+install kpld/kde16x16.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/16x16/places/start-here-kde.png
+install kpld/kde22x22.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/22x22/places/start-here-kde.png
+install kpld/kde32x32.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/32x32/places/start-here-kde.png
+install kpld/kde48x48.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/48x48/places/start-here-kde.png
+install kpld/kde64x64.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/64x64/places/start-here-kde.png
+install kpld/kde128x128.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/128x128/places/start-here-kde.png
+install kpld/kde256x256.png $RPM_BUILD_ROOT%{_iconsdir}/oxygen/256x256/places/start-here-kde.png
 
 %clean
 rm -rf $RPM_BUILD_ROOT
