@@ -18,7 +18,7 @@ Source2:	kpld.tar.gz
 # Source2-md5:	1111e8a60b33ad694e91d574233dde0e
 URL:		http://www.kde.org/
 BuildRequires:	cmake >= 2.8.0
-BuildRequires:	rpmbuild(macros) >= 1.293
+BuildRequires:	rpmbuild(macros) >= 1.600
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -59,15 +59,11 @@ Motyw ikon do KDE - oxygen. Ten pakiet zawiera ikony SVG.
 %build
 install -d build
 cd build
-%cmake .. \
-	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
-	-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
+%cmake \
 	-DCMAKE_CXX_COMPILER_WORKS=1 \
 	-DCMAKE_CXX_COMPILER="%{__cc}" \
 	-DCMAKE_C_COMPILER_WORKS=1 \
-%if "%{_lib}" == "lib64"
-	-DLIB_SUFFIX=64
-%endif
+	../
 
 %install
 rm -rf $RPM_BUILD_ROOT
