@@ -11,7 +11,7 @@ Version:	4.8.1
 Release:	1
 License:	GPL v2
 Group:		X11/Libraries
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/xz/%{orgname}-%{version}.tar.xz
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
 # Source0-md5:	947d07c4f993e7cf070078358de13298
 Source1:	%{name}-pld_czarny.png
 Source2:	kpld.tar.gz
