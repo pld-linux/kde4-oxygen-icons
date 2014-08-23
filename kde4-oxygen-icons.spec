@@ -11,7 +11,7 @@ Version:	4.14.0
 Release:	1
 License:	GPL v2
 Group:		X11/Libraries
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
 # Source0-md5:	26e5e57638f7b43ddb5934988cdf1891
 Source1:	%{name}-pld_czarny.png
 Source2:	kpld.tar.gz
